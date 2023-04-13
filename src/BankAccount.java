@@ -15,7 +15,7 @@ class BankAccount {
 
     public void withdraw(double sum) throws LimitException {
         if (sum > amount) {
-            throw new LimitException("Ошибка. Сумма вывода привышает суммы остатка", amount);
+            throw new LimitException("Ошибка. Сумма вывода привышает суммы остатка.", amount);
         } else {
             amount -= sum;
         }
