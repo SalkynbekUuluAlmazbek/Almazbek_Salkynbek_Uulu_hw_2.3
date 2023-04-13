@@ -13,8 +13,12 @@ public class Main {
             System.out.println("Исключение: " + e.getMessage());
             System.out.println("Остаток на счете: " + e.getRemainingAmount() + "сом");
             System.out.println("Снимаем остаток: " + e.getRemainingAmount() + " сом");
-            account.deposit(-e.getRemainingAmount());
-            System.out.println("Текущий остаток на счете: " + account.getAmount() + " сом");
+            try {
+                account.withdraw(2000);
+                System.out.println("Текущий остаток: " + account.getAmount());
+            } catch (LimitException ex) {
+
+            }
 
         }
     }
