@@ -14,7 +14,7 @@ public class Main {
             System.out.println("Остаток на счете: " + e.getRemainingAmount() + " сом");
             System.out.println("Снимаем остаток: " + e.getRemainingAmount() + " сом");
             try {
-                account.withdraw(2000);
+                account.withdraw(e.getRemainingAmount());
                 System.out.println("Текущий остаток: " + account.getAmount() + " сом");
             } catch (LimitException ex) {
 
