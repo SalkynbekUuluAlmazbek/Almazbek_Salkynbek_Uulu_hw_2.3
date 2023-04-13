@@ -11,7 +11,11 @@ public class Main {
             }
         } catch (LimitException e) {
             System.out.println("Исключение: " + e.getMessage());
-            System.out.println("Остаток на счете: " + e.getRemainingAmount());
+            System.out.println("Остаток на счете: " + e.getRemainingAmount() + "сом");
+            System.out.println("Снимаем остаток: " + e.getRemainingAmount() + " сом");
+            account.deposit(-e.getRemainingAmount());
+            System.out.println("Текущий остаток на счете: " + account.getAmount() + " сом");
+
         }
     }
 }
